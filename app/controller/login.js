@@ -14,7 +14,7 @@ class LoginController extends Controller {
 
       ctx.set({ token });// 设置headers
       ctx.body = {
-        code: '200',
+        code: 200,
         data: [{
           token,
           userName: result[0].userName,

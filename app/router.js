@@ -8,5 +8,6 @@ module.exports = app => {
   const jwtErr = middleware.jwtErr(app.config.jwt);
   router.get('/', controller.home.index);
   router.post('/login', controller.login.login);
+  router.post('/user/create', controller.user.createUser);
   router.get('/getUser', jwtErr, controller.user.getUser);
 };
