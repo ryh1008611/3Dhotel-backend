@@ -22,6 +22,8 @@ module.exports = appInfo => {
   const userConfig = {
     // myAppName: 'egg',
   };
+  // 定义版本号
+  config.version = 'v1';
   config.mysql = {
     // database configuration
     client: {
