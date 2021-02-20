@@ -7,9 +7,7 @@ class UserController extends Controller {
     // eslint-disable-next-line no-unused-vars
     const { ctx, app } = this;
     ctx.body = {
-      ctx,
-      app,
-      // path: app.config.public
+      keys: this.app.config.version,
     };
   }
   async createUser() {

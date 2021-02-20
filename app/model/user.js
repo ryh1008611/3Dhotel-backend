@@ -1,7 +1,7 @@
 'use strict';
-const moment = require('moment');
+// const moment = require('moment');
 module.exports = app => {
-  const { STRING, INTEGER, DATE } = app.Sequelize;
+  const { STRING, INTEGER, DATE, ENUM } = app.Sequelize;
 
   const User = app.model.define('users', {
     id: { type: INTEGER(20).UNSIGNED, primaryKey: true, autoIncrement: true },
@@ -12,11 +12,11 @@ module.exports = app => {
     mobile: { type: STRING(20), allowNull: false, defaultValue: '', comment: '用户手机', unique: true },
     prifix: { type: STRING(32), allowNull: false, defaultValue: '' },
     abstract: { type: STRING(255), allowNull: true, defaultValue: '' },
-    // eslint-disable-next-line no-undef
     gender: { type: ENUM, values: [ '男', '女', '保密' ], allowNull: true, defaultValue: '男', comment: '用户性别' },
-    createdAt: { type: DATE, get() { return moment(this.getDataValue('createdAt')).format('YYYY-MM-DD HH:mm:ss'); } },
-    updatedAt: { type: DATE, get() { return moment(this.getDataValue('updatedAt')).format('YYYY-MM-DD HH:mm:ss'); } },
+    roles: { type: INTEGER(5), defaultValue: 1, comment: '1-访客，2-店家， 3-管理员' },
+    createdAt: DATE,
+    updatedAt: DATE,
   });
-
+  User.sync({ force: true });
   return User;
 };
