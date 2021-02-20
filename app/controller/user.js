@@ -7,9 +7,9 @@ class UserController extends Controller {
     // eslint-disable-next-line no-unused-vars
     const { ctx, app } = this;
     ctx.body = {
-      code: '401',
-      data: '',
-      message: '账号或密码错误',
+      ctx,
+      app,
+      // path: app.config.public
     };
   }
   async createUser() {

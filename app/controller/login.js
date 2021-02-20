@@ -10,7 +10,7 @@ class LoginController extends Controller {
 
       const token = app.jwt.sign({
         username, // 需要存储的 token 数据
-      }, app.config.jwt.secret, { expiresIn: '2m' }); // 2分钟token过期
+      }, app.config.jwt.secret, { expiresIn: '30m' }); // 2分钟token过期
 
       ctx.set({ token });// 设置headers
       ctx.body = {
