@@ -15,28 +15,28 @@ module.exports = {
     const data = [
       {
         hotel_type_name: '豪华型',
-        created_userId: 1,
-        update_userId: 1,
+        created_user_id: 1,
+        update_user_id: 1,
       },
       {
         hotel_type_name: '舒适型',
-        created_userId: 1,
-        update_userId: 1,
+        created_user_id: 1,
+        update_user_id: 1,
       },
       {
         hotel_type_name: '经济型',
-        created_userId: 1,
-        update_userId: 1,
+        created_user_id: 1,
+        update_user_id: 1,
       },
       {
         hotel_type_name: '高档型',
-        created_userId: 1,
-        update_userId: 1,
+        created_user_id: 1,
+        update_user_id: 1,
       },
       {
         hotel_type_name: '民宿',
-        created_userId: 1,
-        update_userId: 1,
+        created_user_id: 1,
+        update_user_id: 1,
       },
     ];
     await queryInterface.bulkInsert('hotel_type', data);

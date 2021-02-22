@@ -17,8 +17,8 @@ module.exports = {
       business_id: { type: INTEGER(20), allowNull: true, comment: '店家id' },
       room_id: { type: INTEGER(20), allowNull: true, comment: '店家id' },
       purchase_price: { type: INTEGER(20), allowNull: true, comment: '成交价格' },
-      createdAt: DATE,
-      updatedAt: DATE,
+      created_at: DATE,
+      updated_at: DATE,
     };
     await queryInterface.createTable('orders', data);
   },

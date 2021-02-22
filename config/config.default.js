@@ -24,24 +24,28 @@ module.exports = appInfo => {
   };
   // 定义版本号
   config.version = 'v1';
-  config.mysql = {
-    // database configuration
-    client: {
-      // host
-      host: 'localhost',
-      // port
-      port: '3306',
-      // username
-      user: 'root',
-      // password
-      password: '123456',
-      // database
-      database: '3d_hotel_development',
+  config.sequelize = {
+    dialect: 'mysql', // 表示使用mysql
+    host: '127.0.0.1', // 连接的数据库主机地址
+    port: 3306, // mysql服务端口
+    database: '3d_hotel_development', // 数据库名
+    username: 'root', // 数据库用户名
+    password: '123456', // 数据库密码
+    timezone: '+8:00', // 由于orm用的UTC时间，这里必须加上东八区，否则取出来的时间相差8小时
+    define: { // model的全局配置
+      timestamps: false, // 添加create,update,delete时间戳
+      freezeTableName: true, // 防止修改表名为复数
+      underscored: false, // 防止驼峰式字段被默认转为下划线
     },
-    // load into app,default is open //加载到应用程序，默认为打开
-    app: true,
-    // load into agent,default is close //加载到代理中，默认值为“关闭”
-    agent: false,
+    dialectOptions: { // 让读取date类型数据时返回字符串而不是UTC时间
+      dateStrings: true,
+      typeCast(field, next) {
+        if (field.type === 'DATETIME') {
+          return field.string();
+        }
+        return next();
+      },
+    },
   };
   config.jwt = {
     secret: '123456',	// 自定义token的加密条件字符串，可按各自的需求填写

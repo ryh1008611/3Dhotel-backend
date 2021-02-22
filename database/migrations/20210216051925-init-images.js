@@ -19,8 +19,8 @@ module.exports = {
       url: { type: STRING(255), allowNull: true, comment: '图片url' },
       file_name: { type: STRING(255), allowNull: true, comment: '原文件名' },
       operator: { type: INTEGER(20), allowNull: true },
-      createdAt: DATE,
-      updatedAt: DATE,
+      created_at: DATE,
+      updated_at: DATE,
     };
     await queryInterface.createTable('images', data);
   },

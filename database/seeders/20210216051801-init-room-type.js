@@ -15,48 +15,48 @@ module.exports = {
     const data = [
       {
         room_type_name: '标准大床房',
-        created_userId: 1,
-        update_userId: 1,
+        created_user_id: 1,
+        update_user_id: 1,
       },
       {
         room_type_name: '舒适大床房',
-        created_userId: 1,
-        update_userId: 1,
+        created_user_id: 1,
+        update_user_id: 1,
       },
       {
         room_type_name: '标准双人房',
-        created_userId: 1,
-        update_userId: 1,
+        created_user_id: 1,
+        update_user_id: 1,
       },
       {
         room_type_name: '舒适双人房',
-        created_userId: 1,
-        update_userId: 1,
+        created_user_id: 1,
+        update_user_id: 1,
       },
       {
         room_type_name: '标准三人房',
-        created_userId: 1,
-        update_userId: 1,
+        created_user_id: 1,
+        update_user_id: 1,
       },
       {
         room_type_name: '舒适三人房',
-        created_userId: 1,
-        update_userId: 1,
+        created_user_id: 1,
+        update_user_id: 1,
       },
       {
         room_type_name: '精致套房',
-        created_userId: 1,
-        update_userId: 1,
+        created_user_id: 1,
+        update_user_id: 1,
       },
       {
         room_type_name: '豪华套房',
-        created_userId: 1,
-        update_userId: 1,
+        created_user_id: 1,
+        update_user_id: 1,
       },
       {
         room_type_name: '总统套房',
-        created_userId: 1,
-        update_userId: 1,
+        created_user_id: 1,
+        update_user_id: 1,
       },
     ];
     await queryInterface.bulkInsert('room_type', data);

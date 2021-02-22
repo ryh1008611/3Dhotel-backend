@@ -18,8 +18,8 @@ module.exports = {
       content: { type: Sequelize.TEXT, allowNull: true, comment: '评论内容' },
       score: { type: INTEGER(5), defaultValue: 5, comment: '评分' },
       is_anonymous: { type: Sequelize.BOOLEAN, defaultValue: true, comment: '是否匿名' },
-      createdAt: DATE,
-      updatedAt: DATE,
+      created_at: DATE,
+      updated_at: DATE,
     };
     await queryInterface.createTable('comment', data);
   },

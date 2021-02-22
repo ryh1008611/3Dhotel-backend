@@ -14,9 +14,9 @@ module.exports = app => {
     abstract: { type: STRING(255), allowNull: true, defaultValue: '' },
     gender: { type: ENUM, values: [ '男', '女', '保密' ], allowNull: true, defaultValue: '男', comment: '用户性别' },
     roles: { type: INTEGER(5), defaultValue: 1, comment: '1-访客，2-店家， 3-管理员' },
-    createdAt: DATE,
-    updatedAt: DATE,
+    created_at: DATE,
+    updated_at: DATE,
   });
-  User.sync({ force: true });
+  // User.sync({ force: true });
   return User;
 };

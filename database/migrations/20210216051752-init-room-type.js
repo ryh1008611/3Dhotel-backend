@@ -13,10 +13,10 @@ module.exports = {
     await queryInterface.createTable('room_type', {
       room_type_id: { type: INTEGER(20).UNSIGNED, primaryKey: true, autoIncrement: true, comment: '房间类型' },
       room_type_name: { type: STRING(255), comment: '类型名称' },
-      created_userId: { type: INTEGER(20), allowNull: false, comment: '创建者' },
-      update_userId: { type: INTEGER(20), allowNull: false, comment: '修改者' },
-      createdAt: DATE,
-      updatedAt: DATE,
+      created_user_id: { type: INTEGER(20), allowNull: false, comment: '创建者' },
+      update_user_id: { type: INTEGER(20), allowNull: false, comment: '修改者' },
+      created_at: DATE,
+      updated_at: DATE,
     });
   },
 

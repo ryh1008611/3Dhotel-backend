@@ -18,9 +18,9 @@ module.exports = {
       price_ordinary: { type: INTEGER(5), comment: '平价日单价' },
       price_busy: { type: INTEGER(5), comment: '旺季单价' },
       price_holiday: { type: INTEGER(5), comment: '法定节假日单价' },
-      created_userId: { type: INTEGER(20), allowNull: false, comment: '创建者' },
-      update_userId: { type: INTEGER(20), allowNull: false, comment: '修改者' },
-      createdAt: DATE,
+      created_user_id: { type: INTEGER(20), allowNull: false, comment: '创建者' },
+      update_user_id: { type: INTEGER(20), allowNull: false, comment: '修改者' },
+      createdat: DATE,
       updatedAt: DATE,
     });
   },

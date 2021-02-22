@@ -1,15 +1,23 @@
 'use strict';
 
 const Controller = require('egg').Controller;
+function toInt(str) {
+  if (typeof str === 'number') return str;
+  if (!str) return str;
+  return parseInt(str, 10) || 0;
+}
 class UserController extends Controller {
   // 验证登录并生成Token
   async getUser() {
     // eslint-disable-next-line no-unused-vars
     const { ctx, app } = this;
-    ctx.body = {
-      keys: this.app.config.version,
-    };
+    // const query = { limit: toInt(ctx.query.limit), offset: toInt(ctx.query.offset) };
+    console.log('---');
+
+    ctx.body = await ctx.model.RoomType.findAll();
+    // ctx.body = 1;
   }
+
   async createUser() {
     const { ctx } = this;
     // ctx.body = {
@@ -31,5 +39,6 @@ class UserController extends Controller {
       };
     }
   }
+
 }
 module.exports = UserController;

@@ -23,10 +23,10 @@ module.exports = {
       type_of_reception: { type: ENUM, values: [ '1', '2', '3' ], allowNull: true, defaultValue: '1', comment: '1-所有人，2-携带中国国籍公民， 3-本地人' },
       lable: { type: STRING(255), allowNull: true, defaultValue: '', comment: '自定义标签' },
       system_lable: { type: STRING(255), allowNull: true, defaultValue: '', comment: '系统定义标签' },
-      created_userId: { type: INTEGER(20), allowNull: false, comment: '创建者' },
-      update_userId: { type: INTEGER(20), allowNull: false, comment: '修改者' },
-      createdAt: DATE,
-      updatedAt: DATE,
+      created_user_id: { type: INTEGER(20), allowNull: false, comment: '创建者' },
+      update_user_id: { type: INTEGER(20), allowNull: false, comment: '修改者' },
+      created_at: DATE,
+      updated_at: DATE,
     });
   },
 
