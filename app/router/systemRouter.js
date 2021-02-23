@@ -11,4 +11,7 @@ module.exports = app => {
   //   router.get('/getUser', jwtErr, controller.user.getUser);
   router.post(`/api/${app.config.version}/hotel`, controller[app.config.version].hotel.hotelController.create);
 
+  // 文件上传
+  router.post(`/api/${app.config.version}/upload`, controller[app.config.version].hotel.fileController.uploadFiler);
+
 };

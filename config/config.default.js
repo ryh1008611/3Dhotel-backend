@@ -50,6 +50,7 @@ module.exports = appInfo => {
   config.jwt = {
     secret: '123456',	// 自定义token的加密条件字符串，可按各自的需求填写
   };
+  config.host = 'http://localhost:7001';
   config.security = {
     csrf: {
       enable: false,
